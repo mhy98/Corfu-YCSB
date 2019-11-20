@@ -110,8 +110,11 @@ public class CorfudbClient extends DB {
   public Status update(String table, String key, Map<String, ByteIterator> values) {
     Map<String, String> record = localCache.get(key);
 
-    return CorfuUtils.updateRecordInStringMap(record, values, runtime);
+    Status st = CorfuUtils.updateRecordInStringMap(record, values, runtime);
 
+    localCache.put(key, record);
+
+    return st;
   }
 
   /**
