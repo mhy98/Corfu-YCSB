@@ -2,13 +2,9 @@ package site.ycsb.db;
 
 import site.ycsb.*;
 
-
-import ch.qos.logback.classic.Level;
-import ch.qos.logback.classic.Logger;
 import org.corfudb.runtime.CorfuRuntime;
 import org.corfudb.runtime.collections.SMRMap;
 import org.corfudb.runtime.exceptions.TransactionAbortedException;
-import org.slf4j.LoggerFactory;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -35,9 +31,6 @@ public class CorfuClientStreams extends DB {
    */
   @Override
   public void init() throws DBException {
-    super.init();
-    Logger root = (Logger) LoggerFactory.getLogger(Logger.ROOT_LOGGER_NAME);
-    root.setLevel(Level.OFF);
     runtime = new CorfuRuntime("localhost:9000")
         // Get config string as argument
         //.parseConfigurationString("localhost:9000")

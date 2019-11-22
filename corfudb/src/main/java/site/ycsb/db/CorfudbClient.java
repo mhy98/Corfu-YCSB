@@ -1,13 +1,10 @@
 package site.ycsb.db;
 
-import ch.qos.logback.classic.Level;
-import ch.qos.logback.classic.Logger;
 import site.ycsb.ByteIterator;
 import site.ycsb.DB;
 import site.ycsb.DBException;
 import site.ycsb.Status;
 import org.corfudb.runtime.CorfuRuntime;
-import org.slf4j.LoggerFactory;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -38,10 +35,7 @@ public class CorfudbClient extends DB {
    */
   @Override
   public void init() throws DBException {
-    super.init();
     String connectString = getProperties().getProperty("connect_string", "localhost:9000");
-    Logger root = (Logger) LoggerFactory.getLogger(Logger.ROOT_LOGGER_NAME);
-    root.setLevel(Level.OFF);
     if (!runtimeInited) {
       runtime = new CorfuRuntime()
           // Get config string as argument
