@@ -31,7 +31,7 @@ public class CorfudbClient extends DB {
    */
   @Override
   public void init() throws DBException {
-    runtime = new CorfuRuntime("localhost:9000")
+    runtime = new CorfuRuntime("192.168.1.57:9000")
         // Get config string as argument
         //.parseConfigurationString("localhost:9000")
         .connect();
