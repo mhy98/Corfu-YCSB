@@ -24,7 +24,7 @@ import java.util.Vector;
  *          * Record value = String
  *
  */
-public class CorfudbClient extends DB {
+public class CorfudbClient_nostreams extends DB {
   private static CorfuRuntime runtime;
   private static Boolean runtimeInited = false;
   private Map<String, Map<String, String>> localCache;
