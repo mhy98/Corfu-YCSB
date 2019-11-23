@@ -22,7 +22,7 @@ import java.util.Vector;
  *      - Value : SMRMAP (State Machine Replication MAP, map backed by the log)
  *
  */
-public class CorfuClient extends DB {
+public class CorfudbClient extends DB {
   private CorfuRuntime runtime;
 
   /**
